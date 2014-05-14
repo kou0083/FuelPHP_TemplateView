@@ -1,13 +1,13 @@
 <?php
 
-namespace TemplateView;
+namespace Template;
 
 // ホワイトリストにこのクラスを追加
 $whiteList = \Config::get('security.whitelisted_classes');
-array_push($whiteList, 'TemplateView\TemplateContainer');
+array_push($whiteList, 'Template\Container');
 \Config::set('security.whitelisted_classes', $whiteList);
 
-class TemplateContainer
+class Container
 {
     public $content;
     private $property;

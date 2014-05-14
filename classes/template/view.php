@@ -1,6 +1,6 @@
 <?php
 
-namespace TemplateView;
+namespace Template;
 
 /**
  * FuelPHP FrameworkでViewにテンプレート機能を持たせる拡張クラスです。
@@ -11,7 +11,7 @@ namespace TemplateView;
  * @license    MIT License
  * @link       http://fuelphp.com
  */
-class TemplateView extends \View
+class View extends \View
 {
     protected $template = 'template';
 
@@ -46,7 +46,7 @@ class TemplateView extends \View
                 throw new \FuelException('The requested view could not be found: '.\Fuel::clean_path($file));
         }
         
-        $this->container = TemplateContainer::forge(\View::forge($file, $this->data));
+        $this->container = Container::forge(\View::forge($file, $this->data));
         
         return $this;
     }
